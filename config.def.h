@@ -498,6 +498,7 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
 	RULE(.class = "VSCodium", .tags = 2)
+	RULE(.class = "obsidian", .tags = 3)
 	#if RENAMED_SCRATCHPADS_PATCH
 	RULE(.title = "spterm", .scratchkey = 's', .isfloating = 1)
 	#elif SCRATCHPADS_PATCH
@@ -893,7 +894,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_e,      spawn,          sh(term " -e lf")},
 	{ MODKEY,                       XK_a,      spawn,          sh(term " -e htop")},
 	{ MODKEY,                       XK_d,      spawn,          sh(term " -e btm")},
-	{ MODKEY,                       XK_Escape,      spawn,          sh("clipmenu")},
+	{ MODKEY,                       XK_Escape,      spawn,          sh("rofi -modi \"clipboard:greenclip print\" -show clipboard -run-command \'{cmd}\'")},
 	{ 0,                       XK_Print,      spawn,          sh("flameshot gui")},
 	{ MODKEY,            		    XK_Print, spawn,          sh("~/.config/rofi/applets/bin/screenshot.sh")},
 	{ MODKEY,                       XK_F2,     spawn,          sh("systemctl poweroff") },
